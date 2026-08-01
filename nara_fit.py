@@ -11,16 +11,16 @@ def validar_valores(pergunta, tipo): # Função auxíliar para não repetir a va
             print("Digite um dado válido!")
             
 # Dicionário com valores e sem valores:
-# cadastrados = {
-#     "nomes": [],
-#     "idades": [],
-#     "pesos": [],
-#     "alturas": [],
-#     "imc": [],
-#     "status": []
-# }
-# Dicionario com valores predefinidos para testes rapidos: 
 cadastrados = {
+    "nomes": [],
+    "idades": [],
+    "pesos": [],
+    "alturas": [],
+    "imc": [],
+    "status": []
+}
+# Dicionario com valores predefinidos para testes rapidos: 
+'''cadastrados = {
     "nomes": [
         "Special Week",        # Uma Musume
         "Rukia Kuchiki",       # Bleach
@@ -93,7 +93,7 @@ cadastrados = {
         "Peso Normal",     # Izuku Midoriya
         "Obeso" # All Might 
     ]
-}
+}'''
 
 # Cadastro e a função auxiliar para calcular o IMC e avaliar:
 def calcular_avaliar(peso , altura, index): 
