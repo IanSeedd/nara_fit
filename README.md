@@ -1,4 +1,4 @@
-# 🏋️ Nara Fit
+# 🏋️ Nara Fit OBS: O ipynb está desatualizado
 
 Um sistema simples de gerenciamento de alunos para academias desenvolvido em **Python** utilizando apenas recursos nativos da linguagem.
 
