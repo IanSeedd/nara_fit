@@ -11,16 +11,16 @@ def validar_valores(pergunta, tipo): # Função auxíliar para não repetir a va
             print("Digite um dado válido!")
             
 # Dicionário com valores e sem valores:
-cadastrados = {
-    "nomes": [],
-    "idades": [],
-    "pesos": [],
-    "alturas": [],
-    "imc": [],
-    "status": []
-}
+# cadastrados = {
+#     "nomes": [],
+#     "idades": [],
+#     "pesos": [],
+#     "alturas": [],
+#     "imc": [],
+#     "status": []
+# }
 # Dicionario com valores predefinidos para testes rapidos: 
-'''cadastrados = {
+cadastrados = {
     "nomes": [
         "Special Week",        # Uma Musume
         "Rukia Kuchiki",       # Bleach
@@ -93,7 +93,7 @@ cadastrados = {
         "Peso Normal",     # Izuku Midoriya
         "Obeso" # All Might 
     ]
-}'''
+}
 
 # Cadastro e a função auxiliar para calcular o IMC e avaliar:
 def calcular_avaliar(peso , altura, index): 
@@ -143,10 +143,10 @@ def listar_exibir(index):
     elif len(cadastrados["nomes"]) == 0:
         print("Sem usuários no sistema! Que tal cadastrar antes de checar a lista ou fazer qualquer operação como deletar ou alterar dados?")
     else:
-        print(f"{"="*10} Lista de cadastrados {"="*10}")
+        print(f"{'='*10} Lista de cadastrados {'='*10}")
         for i in range(len(cadastrados["nomes"])): # Por padrão vou usar o nomes 
             print(f"{i+1}° - {cadastrados["nomes"][i]} | {cadastrados["idades"][i]} anos | {cadastrados["pesos"][i]}Kg | {cadastrados["alturas"][i]}m | IMC: {round(cadastrados["imc"][i], 2)}Kg/m² | Status: {cadastrados["status"][i]}")
-        print(f"{"="*42}")
+        print("="*42)
 # Estatísticas completa + menu de estatísticas:
 def estatisticas():
     if len(cadastrados["nomes"]) == 0:
@@ -161,7 +161,7 @@ def estatisticas():
         for i in range(len(cadastrados["nomes"])):
             if cadastrados["idades"][i] == velho:
                 cliente_velho.append(cadastrados["nomes"][i])
-            elif cadastrados["idades"][i] == novo:
+            if cadastrados["idades"][i] == novo:
                 cliente_novo.append(cadastrados["nomes"][i])
         obesos = {
             "clientes": [],
@@ -199,7 +199,7 @@ def estatisticas():
             try:
                 opcao = int(input("Escolha um número: "))
                 if opcao == 2:
-                    print(f"{"="*42}")
+                    print("="*42)
                     if obesos["quantidade"] > 0:
                         print(f"Exite(m) {obesos['quantidade']} obeso(s):")
                         for i in range(len(obesos["clientes"])):
@@ -219,7 +219,7 @@ def estatisticas():
                         print(f"Exite(m) {abaixos['quantidade']} abaixo/abaixos do peso:")
                         for i in range(len(abaixos["clientes"])):
                             print(abaixos['clientes'][i])
-                    print(f"{"="*42}")
+                    print("="*42)
                 elif opcao == 1:
                     print(f"Média de idades: {media}")
                     print(f"A maior idade é {velho} e o(s) aluno(s) que possuem essa idade são: ")
@@ -244,7 +244,7 @@ def alterar():
             except ValueError:
                 print("Digite um número.")
                 continue
-            if aluno:
+            if 0 < aluno <= len(cadastrados["nomes"]):
                 print("Aluno selecionado: ")
                 index = aluno - 1 # Só pra não repetir o -1 
                 listar_exibir(index)
